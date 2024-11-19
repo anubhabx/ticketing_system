@@ -1,0 +1,1496 @@
+/* App.css */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --warning-color: #f1c40f;
+  --light-gray: #ecf0f1;
+  --dark-gray: #34495e;
+  --white: #ffffff;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+/* Navigation Styles */
+nav {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links a,
+.nav-links button {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Auth Forms (Login/Register) */
+.auth-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-container input {
+  padding: 0.75rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.dashboard h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--secondary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Admin Dashboard Button */
+.dashboard .admin-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard .admin-button:hover {
+  background-color: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard .admin-button:active {
+  transform: translateY(0);
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.dashboard-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .dashboard h2 {
+    font-size: 1.8rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .dashboard .admin-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dashboard-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Create Ticket Form */
+.create-ticket {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.create-ticket:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.create-ticket h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.create-ticket form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.create-ticket input,
+.create-ticket textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: var(--white);
+}
+
+.create-ticket input:focus,
+.create-ticket textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.create-ticket textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.create-ticket button[type="submit"] {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+}
+
+.create-ticket button[type="submit"]:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-ticket button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Error message in create ticket form */
+.create-ticket .error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--danger-color);
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .create-ticket {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .create-ticket button[type="submit"] {
+    width: 100%;
+    padding: 0.875rem;
+  }
+}
+
+/* Ticket List Styles */
+.ticket-list {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.ticket-list h3 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Ticket Item Styles */
+.ticket-item {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.ticket-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-item h4 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.ticket-item p {
+  color: var(--dark-gray);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Ticket Status Styles */
+.ticket-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+}
+
+.ticket-status select {
+  padding: 0.5rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ticket-status select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Comments Section Styles */
+.comments {
+  border-top: 1px solid var(--light-gray);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.comments h5 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.comment {
+  background-color: var(--light-gray);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.comment p {
+  margin-bottom: 0.5rem;
+}
+
+.comment small {
+  color: var(--dark-gray);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Comment Form Styles */
+.comments form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.comments input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.comments input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.comments button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.comments button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ticket-list {
+    margin: 1.5rem;
+  }
+
+  .ticket-item {
+    padding: 1.2rem;
+  }
+
+  .comments form {
+    flex-direction: column;
+  }
+
+  .comments button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticket-list h3 {
+    font-size: 1.5rem;
+  }
+
+  .ticket-item h4 {
+    font-size: 1.2rem;
+  }
+
+  .ticket-status {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ticket-status select {
+    width: 100%;
+  }
+}
+
+/* Status Badge Styles */
+.status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-badge.open {
+  background-color: rgba(241, 196, 15, 0.1);
+  color: var(--warning-color);
+}
+
+.status-badge.in-progress {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--secondary-color);
+}
+
+.status-badge.resolved {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--success-color);
+}
+
+/* Empty State Styling */
+.ticket-list p {
+  text-align: center;
+  color: var(--dark-gray);
+  font-size: 1.1rem;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Buttons */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"] {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+.delete-btn {
+  background-color: var(--danger-color);
+  color: var(--white);
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Error Messages */
+.error {
+  background-color: #ffebee;
+  color: var(--danger-color);
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .auth-container {
+    margin: 1rem;
+  }
+
+  .dashboard {
+    margin: 1rem;
+  }
+
+  .ticket-status {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Status Colors */
+.status-open {
+  color: var(--warning-color);
+}
+
+.status-in-progress {
+  color: var(--secondary-color);
+}
+
+.status-resolved {
+  color: var(--success-color);
+}
+
+/* Loading States */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--dark-gray);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ticket-item {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.admin-dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-dashboard h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat-card.total {
+  border-top: 4px solid var(--primary-color);
+}
+
+.stat-card.open {
+  border-top: 4px solid var(--warning-color);
+}
+
+.stat-card.in-progress {
+  border-top: 4px solid var(--secondary-color);
+}
+
+.stat-card.resolved {
+  border-top: 4px solid var(--success-color);
+}
+
+/* Responsive adjustments for admin dashboard */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 1rem;
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Loading State */
+.admin-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.admin-loading-spinner {
+  border: 4px solid var(--light-gray);
+  border-top: 4px solid var(--secondary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Error State */
+.admin-error {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid var(--danger-color);
+  color: var(--danger-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .admin-restricted {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .admin-restricted h2 {
+    font-size: 1.5rem;
+  }
+
+  .admin-restricted .icon {
+    font-size: 3rem;
+  }
+}
+
+.ticket-management {
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.status-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-control select {
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.user-list {
+  padding: 20px;
+}
+
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-list th,
+.user-list td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.error {
+  color: #dc3545;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8d7da;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Admin Route Styles */
+.admin-restricted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.admin-restricted h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.admin-restricted p {
+  color: var(--dark-gray);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.admin-restricted .icon {
+  font-size: 4rem;
+  color: var(--warning-color);
+  margin-bottom: 1.5rem;
+}
+
+.admin-redirect-btn {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.admin-redirect-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin Navigation Indicator */
+.admin-indicator {
+  background-color: var(--success-color);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+/* Admin Section Transitions */
+.admin-section {
+  animation: fadeSlideIn 0.4s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Admin Loading State */
+.admin-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.admin-loading-spinner {
+  border: 4px solid var(--light-gray);
+  border-top: 4px solid var(--secondary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Admin Error State */
+.admin-error {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid var(--danger-color);
+  color: var(--danger-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .admin-restricted {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .admin-restricted h2 {
+    font-size: 1.5rem;
+  }
+
+  .admin-restricted .icon {
+    font-size: 3rem;
+  }
+}
+
+/* Delete Ticket Button Styles */
+.delete-btn {
+  background-color: var(--danger-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+}
+
+.delete-btn:active {
+  transform: translateY(0);
+}
+
+.delete-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+}
+
+/* Delete Confirmation Dialog Styles */
+.delete-confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 400px;
+  width: 90%;
+}
+
+.delete-confirmation h3 {
+  color: var(--danger-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.delete-confirmation-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.delete-confirmation-actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.delete-confirmation-actions .confirm-delete {
+  background-color: var(--danger-color);
+  color: var(--white);
+}
+
+.delete-confirmation-actions .cancel-delete {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .delete-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .delete-confirmation {
+    padding: 1.5rem;
+  }
+
+  .delete-confirmation-actions {
+    flex-direction: column;
+  }
+
+  .delete-confirmation-actions button {
+    width: 100%;
+  }
+}
+
+/* Login Styles */
+.login-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+.login-container h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--white);
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.login-container input::placeholder {
+  color: #95a5a6;
+}
+
+.login-container button[type="submit"] {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.login-container button[type="submit"]:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.login-container .error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--danger-color);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .login-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .login-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .login-container input,
+  .login-container button[type="submit"] {
+    padding: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Logout Button Styles */
+.logout-btn {
+  background-color: transparent;
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border: 2px solid var(--white);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logout-btn:hover {
+  background-color: var(--white);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+.logout-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Logout Confirmation Dialog */
+.logout-confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.logout-confirmation h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.logout-confirmation-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.logout-confirmation-actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .logout-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .logout-confirmation {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .logout-confirmation-actions {
+    flex-direction: column;
+  }
+
+  .logout-confirmation-actions button {
+    width: 100%;
+  }
+}
+
+/* Navigation Styles */
+nav {
+  background-color: var(--primary-color);
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-links a:active {
+  transform: translateY(0);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+  width: 80%;
+}
+
+/* Active Link Styles */
+.nav-links a.active {
+  background-color: var(--secondary-color);
+}
+
+/* Logo or Brand Styles */
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+/* Mobile Navigation */
+.nav-mobile-menu {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    justify-content: space-around;
+    padding: 0 0.5rem;
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Register Form Styles */
+.register-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+.register-container h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.register-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.register-container .input-group {
+  position: relative;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--white);
+}
+
+.register-container input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+}
+
+.register-container input::placeholder {
+  color: #95a5a6;
+  transition: all 0.3s ease;
+}
+
+.register-container input:focus::placeholder {
+  opacity: 0.7;
+  transform: translateY(-5px);
+}
+
+.register-container button[type="submit"] {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-container button[type="submit"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s ease,
+    height 0.6s ease;
+}
+
+.register-container button[type="submit"]:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.register-container button[type="submit"]:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+/* Password Strength Styles */
+.password-strength {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+}
+
+.password-strength-bar {
+  height: 4px;
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.password-strength-fill {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.password-strength-fill.weak {
+  width: 33%;
+  background-color: var(--danger-color);
+  animation: pulse 2s infinite;
+}
+
+.password-strength-fill.medium {
+  width: 66%;
+  background-color: var(--warning-color);
+}
+
+.password-strength-fill.strong {
+  width: 100%;
+  background-color: var(--success-color);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Error Message Styles */
+.register-container .error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--danger-color);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--danger-color);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .register-container {
+    margin: 2rem 1rem;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 1.5rem;
+  }
+
+  .register-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .register-container input,
+  .register-container button[type="submit"] {
+    padding: 1rem;
+  }
+}
